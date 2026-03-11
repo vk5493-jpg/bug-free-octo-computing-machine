@@ -1,100 +1,99 @@
-/* Import a slightly lighter weight for that high-end editorial look */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+/* Importing a modern, highly legible font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    /* Clean, neutral off-white background */
-    background-color: #f9f9f9; 
+    font-family: 'Inter', -apple-system, sans-serif;
+    /* Sleek, solid dark background to reduce eye strain */
+    background: #121212;
     margin: 0;
-    padding: 0;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 100vh;
-    color: #1a1a1a;
-    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    color: #e0e0e0;
 }
 
 .container {
-    width: 90%;
-    max-width: 700px;
-    height: 85vh;
-    background: transparent;
+    width: 100%;
+    max-width: 850px;
+    /* Slightly lighter than the body to create depth without harsh shadows */
+    background: #181818;
+    /* A subtle border replaces the heavy shadow for a flatter, minimalist look */
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    /* Removed the heavy shadow/box for a "borderless" look */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 header {
-    padding: 30px 0; /* More vertical breathing room */
+    padding: 20px 40px;
+    border-bottom: 1px solid #2a2a2a;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: none; /* Removed the line for a cleaner transition */
+    background-color: transparent;
 }
 
 header h1 {
     margin: 0;
-    font-size: 0.9rem; /* Smaller, uppercase for a "brand" feel */
+    font-size: 1.2rem; /* Slightly smaller for a more refined look */
     font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #999;
+    color: #ffffff;
+    letter-spacing: -0.3px;
 }
 
+/* Status indicator redesigned as a subtle, muted pill */
 #status {
     font-size: 0.75rem;
-    font-weight: 400;
-    color: #999;
-    text-transform: lowercase;
-    transition: opacity 0.3s ease;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background-color: #242424;
+    color: #888888;
+    border: 1px solid #333333;
+    transition: all 0.3s ease;
 }
 
-/* Subtle pulse instead of color change for saving status */
+/* Saving state becomes even more subdued */
 #status.saving {
-    opacity: 0.5;
+    background-color: transparent;
+    color: #555555;
+    border-color: #222222;
 }
 
 #editor {
     flex-grow: 1;
     border: none;
-    padding: 20px 0; /* Focused padding */
+    padding: 40px;
     font-size: 1.1rem;
     line-height: 1.7;
     resize: none;
     outline: none;
     font-family: inherit;
-    color: #1a1a1a;
+    /* Soft light grey for comfortable long-form typing */
+    color: #d1d1d1;
     background-color: transparent;
-    /* Soft transition for a focused writing experience */
-    transition: color 0.2s ease;
 }
 
 #editor::placeholder {
-    color: #d1d1d1;
-    font-weight: 300;
-    font-style: italic;
+    color: #4a4a4a;
+    font-weight: 400;
 }
 
-/* Hide scrollbar by default for the minimalist aesthetic */
+/* Minimalist dark mode scrollbar */
 ::-webkit-scrollbar {
-    width: 4px;
+    width: 8px;
 }
 ::-webkit-scrollbar-track {
     background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    background: #eeeeee;
-    border-radius: 10px;
+    background: #333333;
+    border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #e0e0e0;
+    background: #4a4a4a;
 }
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-    .container {
-        width: 85%;
-        height: 90vh;
-    }
-}0
