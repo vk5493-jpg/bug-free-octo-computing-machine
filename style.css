@@ -1,98 +1,92 @@
-/* Eine moderne, gut lesbare Schriftart von Google Fonts importieren */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+/* --- Base Reset & Typography --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    /* Ein tiefes, minimalistisches Dunkelgrau statt eines hellen Verlaufs */
-    background: #0a0a0a; 
-    margin: 0;
-    padding: 40px 20px;
+    /* Uses modern system fonts for a clean look */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    height: 100vh;
-    box-sizing: border-box;
-    color: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
 }
 
+/* --- Layout --- */
 .container {
     width: 100%;
-    max-width: 850px;
-    /* Leicht abgehobener Hintergrundton für Tiefe */
-    background: #121212; 
-    /* Subtiler Schatten und eine sehr zarte Kontur für einen scharfen, modernen Look */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
+    max-width: 800px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    padding: 3rem 2rem;
 }
 
+/* --- Header & Status --- */
 header {
-    padding: 20px 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
+    margin-bottom: 2rem;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 1.2rem;
+h1 {
+    font-size: 1.25rem;
     font-weight: 500;
     color: #ffffff;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.02em;
 }
 
-/* Status-Anzeige mit gedämpften, transparenten Farben für "Dark Mode" */
 #status {
     font-size: 0.75rem;
-    font-weight: 500;
-    padding: 6px 14px;
-    border-radius: 20px;
-    background-color: rgba(46, 125, 50, 0.15);
-    color: #81c784;
-    border: 1px solid rgba(129, 199, 132, 0.1);
-    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #a1a1aa;
+    background-color: #1f1f22;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px; /* Creates a modern pill shape */
+    border: 1px solid #27272a;
+    transition: color 0.3s ease;
 }
 
-/* Wird vom JavaScript aktiviert, während getippt wird */
-#status.saving {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #888888;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-}
-
+/* --- Editor Area --- */
 #editor {
-    flex-grow: 1;
-    border: none;
-    padding: 40px;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    resize: none;
-    outline: none;
-    font-family: inherit;
-    color: #cccccc;
+    flex-grow: 1; /* Stretches to fill the remaining vertical space */
+    width: 100%;
     background-color: transparent;
+    color: #d4d4d8;
+    font-family: inherit;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    border: none;
+    resize: none; /* Prevents the user from breaking the layout */
+    outline: none; /* Removes the default browser focus ring */
 }
 
+/* Subtle placeholder text */
 #editor::placeholder {
-    color: #4a4a4a;
-    font-weight: 400;
+    color: #52525b;
+    font-style: italic;
 }
 
-/* Eine elegante, abgedunkelte Scrollbar für den Textbereich */
+/* Custom scrollbar for webkit browsers to match the dark theme */
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #121212;
 }
+
 ::-webkit-scrollbar-thumb {
-    background: #2a2a2a;
+    background: #27272a;
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-    background: #404040;
+    background: #3f3f46;
 }
