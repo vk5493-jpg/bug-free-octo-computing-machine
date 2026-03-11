@@ -62,4 +62,34 @@ h1 {
     width: 100%;
     background-color: transparent;
     color: #1f2937;
-    font-family
+    font-family: inherit;
+    font-size: 1.15rem; /* Etwas größer für entspanntes Lesen */
+    line-height: 1.7; /* Großzügiger Zeilenabstand */
+    border: none;
+    resize: none;
+    outline: none;
+}
+
+/* Platzhalter-Text (Placeholder) */
+#editor::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+/* --- Dezente Scrollbar für Webkit-Browser --- */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e5e7eb;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d1d5db;
+}
