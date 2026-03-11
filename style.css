@@ -1,94 +1,100 @@
-/* Eine moderne, gut lesbare Schriftart von Google Fonts importieren */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+/* Import a slightly lighter weight for that high-end editorial look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
 body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    /* Ein sehr sanfter, eleganter Hintergrund-Verlauf */
-    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Clean, neutral off-white background */
+    background-color: #f9f9f9; 
     margin: 0;
-    padding: 40px 20px;
+    padding: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    box-sizing: border-box;
-    color: #333;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
-    width: 100%;
-    max-width: 850px;
-    background: #ffffff;
-    /* Weicher, großer Schatten für einen "schwebenden" Effekt */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0,0,0,0.05);
-    border-radius: 16px;
+    width: 90%;
+    max-width: 700px;
+    height: 85vh;
+    background: transparent;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    /* Removed the heavy shadow/box for a "borderless" look */
 }
 
 header {
-    padding: 20px 40px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 30px 0; /* More vertical breathing room */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: none; /* Removed the line for a cleaner transition */
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
-}
-
-/* Status-Anzeige als schickes "Pillen"-Abzeichen */
-#status {
-    font-size: 0.8rem;
+    font-size: 0.9rem; /* Smaller, uppercase for a "brand" feel */
     font-weight: 500;
-    padding: 6px 14px;
-    border-radius: 20px;
-    background-color: #e8f5e9;
-    color: #2e7d32;
-    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #999;
 }
 
-/* Wird vom JavaScript aktiviert, während getippt wird */
+#status {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #999;
+    text-transform: lowercase;
+    transition: opacity 0.3s ease;
+}
+
+/* Subtle pulse instead of color change for saving status */
 #status.saving {
-    background-color: #f1f3f5;
-    color: #868e96;
+    opacity: 0.5;
 }
 
 #editor {
     flex-grow: 1;
     border: none;
-    padding: 40px;
-    font-size: 1.15rem;
-    line-height: 1.8;
+    padding: 20px 0; /* Focused padding */
+    font-size: 1.1rem;
+    line-height: 1.7;
     resize: none;
     outline: none;
     font-family: inherit;
-    color: #2c3e50;
+    color: #1a1a1a;
     background-color: transparent;
+    /* Soft transition for a focused writing experience */
+    transition: color 0.2s ease;
 }
 
 #editor::placeholder {
-    color: #adb5bd;
-    font-weight: 400;
+    color: #d1d1d1;
+    font-weight: 300;
+    font-style: italic;
 }
 
-/* Eine elegantere Scrollbar für den Textbereich */
+/* Hide scrollbar by default for the minimalist aesthetic */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
 }
 ::-webkit-scrollbar-track {
     background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    background: #ced4da;
-    border-radius: 4px;
+    background: #eeeeee;
+    border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #adb5bd;
+    background: #e0e0e0;
 }
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .container {
+        width: 85%;
+        height: 90vh;
+    }
+}0
