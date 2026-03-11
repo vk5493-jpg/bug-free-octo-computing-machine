@@ -1,10 +1,10 @@
-/* Importing a modern, highly legible font from Google Fonts */
+/* Eine moderne, gut lesbare Schriftart von Google Fonts importieren */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 body {
     font-family: 'Inter', -apple-system, sans-serif;
-    /* Sleek, solid dark background to reduce eye strain */
-    background: #121212;
+    /* Ein tiefes, minimalistisches Dunkelgrau statt eines hellen Verlaufs */
+    background: #0a0a0a; 
     margin: 0;
     padding: 40px 20px;
     display: flex;
@@ -17,20 +17,20 @@ body {
 .container {
     width: 100%;
     max-width: 850px;
-    /* Slightly lighter than the body to create depth without harsh shadows */
-    background: #181818;
-    /* A subtle border replaces the heavy shadow for a flatter, minimalist look */
-    border: 1px solid #2a2a2a;
+    /* Leicht abgehobener Hintergrundton für Tiefe */
+    background: #121212; 
+    /* Subtiler Schatten und eine sehr zarte Kontur für einen scharfen, modernen Look */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 header {
     padding: 20px 40px;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,29 +39,29 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 1.2rem; /* Slightly smaller for a more refined look */
+    font-size: 1.2rem;
     font-weight: 500;
     color: #ffffff;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.5px;
 }
 
-/* Status indicator redesigned as a subtle, muted pill */
+/* Status-Anzeige mit gedämpften, transparenten Farben für "Dark Mode" */
 #status {
     font-size: 0.75rem;
     font-weight: 500;
-    padding: 4px 12px;
+    padding: 6px 14px;
     border-radius: 20px;
-    background-color: #242424;
-    color: #888888;
-    border: 1px solid #333333;
+    background-color: rgba(46, 125, 50, 0.15);
+    color: #81c784;
+    border: 1px solid rgba(129, 199, 132, 0.1);
     transition: all 0.3s ease;
 }
 
-/* Saving state becomes even more subdued */
+/* Wird vom JavaScript aktiviert, während getippt wird */
 #status.saving {
-    background-color: transparent;
-    color: #555555;
-    border-color: #222222;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #888888;
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 #editor {
@@ -73,8 +73,7 @@ header h1 {
     resize: none;
     outline: none;
     font-family: inherit;
-    /* Soft light grey for comfortable long-form typing */
-    color: #d1d1d1;
+    color: #cccccc;
     background-color: transparent;
 }
 
@@ -83,7 +82,7 @@ header h1 {
     font-weight: 400;
 }
 
-/* Minimalist dark mode scrollbar */
+/* Eine elegante, abgedunkelte Scrollbar für den Textbereich */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -91,9 +90,9 @@ header h1 {
     background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    background: #333333;
+    background: #2a2a2a;
     border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #4a4a4a;
+    background: #404040;
 }
